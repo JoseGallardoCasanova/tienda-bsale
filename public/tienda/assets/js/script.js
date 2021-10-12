@@ -51,7 +51,7 @@ const calcularTotal = () => {
 
 //crea las targetas en donde se muestran los productos
 const allProducts = () => {
-  fetch("http://localhost:3800/bsale/products")
+  fetch("https://peaceful-citadel-68878.herokuapp.com/bsale/products")
     .then((response) => response.json())
     .then((data) => {
       let cards = "";
@@ -91,7 +91,7 @@ $("nav").on("submit", (event) => {
   event.preventDefault();
   let search = document.getElementById("search").value;
   document.getElementById("product").innerHTML = "";
-  fetch(`http://localhost:3800/bsale/search/${search}`)
+  fetch(`https://peaceful-citadel-68878.herokuapp.com/bsale/search/${search}`)
     .then((response) => response.json())
     .then((data) => {
       let cards = "";
