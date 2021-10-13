@@ -1,10 +1,12 @@
-//prepara los productos para buscarlos
+//Verificar si ID existe en los seleccionados
+
 const buscar_item_por_id = (id) => {
   return productAll.find(function (item) {
     return item.id === id;
   });
 }
 
+//Agrega los productos a la lista de pago
 const addListPayment = (retrievedObject) => {
   let rows = "";
   $.each(retrievedObject, (i, row) => {
@@ -22,7 +24,7 @@ const addListPayment = (retrievedObject) => {
 //agrega los productos al carrito
 const addCard = () => {
   let addCarro = JSON.parse(localStorage.getItem("productAll"));
-  console.log(addCarro, 'addcarro')
+ 
   let adds = "";
   $(`#lista-carrito tbody`).append(adds);
   $.each(addCarro, (i, row) => {
@@ -49,7 +51,7 @@ const calcularTotal = () => {
 }
 
 
-//crea las targetas en donde se muestran los productos
+//crea las tarjetas en donde se muestran los productos
 const allProducts = () => {
   fetch("https://peaceful-citadel-68878.herokuapp.com/bsale/products")
     .then((response) => response.json())
@@ -73,12 +75,12 @@ const allProducts = () => {
     });
 }
 
-//suma de productos en tabla
+//calcula los productos que tengo seleccionados
 const productTotal = () => {
-  console.log('paso?')
+
   let productAll = JSON.parse(localStorage.getItem("productAll"));
   let cant = document.getElementById("countProduct");
-  console.log(cant)
+ 
   if (productAll != null && productAll.length > 0) {
     cant.innerHTML = `<span class="cardCount">${productAll.length}</span>`
   } else {
@@ -117,9 +119,8 @@ $("nav").on("submit", (event) => {
     });
 });
 
-//creacion de array d productos
+//selecciona y garda productos en localstorage
 let productAll = [];
-
 function checket(item) {
   let itemProduct = item.split(",");
   const countProduct = buscar_item_por_id(itemProduct[0])
@@ -166,12 +167,13 @@ $("#pagar").click(function () {
   }
 });
 
-//funcion para buscar productos
+
 window.onload = function () {
+  //funcion para buscar productos
   $("#search")
     .on("keyup", function () {
       let value = $(this).val().length;
-      console.log(value, "aca estoy");
+      
       if (value === 0) {
         document.getElementById("product").innerHTML = "";
         allProducts();
