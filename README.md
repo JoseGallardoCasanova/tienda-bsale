@@ -12,11 +12,18 @@ _-Express version 4.17.1_
 
 ### Instalación 🔧
 
-Una vez descargado, antes de iniciar, instalar dependencias con "npm install" en consola de Node
+_Una vez descargado, antes de iniciar, instalar dependencias con "npm install" en consola de Node_
 
 ```
 npm install
 ```
+
+_Luego iniciar con "npm start"
+
+```
+npm start
+```
+
 
 ## Construido con 🛠️
 
