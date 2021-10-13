@@ -18,7 +18,7 @@ _Una vez descargado, antes de iniciar, instalar dependencias con "npm install" e
 npm install
 ```
 
-_Luego iniciar con "npm start"
+_Luego iniciar con "npm start"_
 
 ```
 npm start
