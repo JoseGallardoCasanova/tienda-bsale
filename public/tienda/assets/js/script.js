@@ -91,7 +91,7 @@ $("nav").on("submit", (event) => {
   event.preventDefault();
   let search = document.getElementById("search").value;
   document.getElementById("product").innerHTML = "";
-  fetch(`https://peaceful-citadel-68878.herokuapp.com/bsale/search/${search}`)
+  fetch(`http://localhost:3800/bsale/search/${search}`)
     .then((response) => response.json())
     .then((data) => {
       let cards = "";

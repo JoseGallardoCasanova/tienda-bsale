@@ -4,9 +4,13 @@ const connection = require('../config/db')
 const productApi = (app) => {
 
 
+  app.get("/tienda", (req, res) => {
+    res.sendfile(path.join(__dirname + "/public/tienda/index.html"));
+  });
+
   //Metodo usado para el root de la pagina
   app.get("/", (req, res) => {
-    res.sendfile(path.join(__dirname + "/public/tienda/index.html"));
+    res.send("Bienvenido a Bsale");
   });
 
   //Metodo para traer todos los productos
