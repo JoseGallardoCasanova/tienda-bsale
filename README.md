@@ -12,7 +12,7 @@ _-Express version 4.17.1_
 
 ### Instalación 🔧
 
-Antes de iniciar, instalar dependencias con "npm install" en consola de node
+Una vez descargado, antes de iniciar, instalar dependencias con "npm install" en consola de Node
 
 ```
 npm install
@@ -20,9 +20,9 @@ npm install
 
 ## Construido con 🛠️
 
-_-Backend: Eode.js, Express_
+_-Backend: Node.js, Express_
 
-_-Frontend: vanilla javascript, jquery, bootstrap, css, html_
+_-Frontend: Vanilla Javascript, Jquery, Bootstrap, CSS, HTML_
 
 _-Base de Datos: MySQL_
 
