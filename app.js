@@ -11,7 +11,7 @@ const host = process.env.HOST || "0.0.0.0";
 
 app.use(bodyParser.json());
 
-app.use(express.static('public'))
+// app.use(express.static('public'))
 
 productApi(app);
 
