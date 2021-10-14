@@ -19,6 +19,7 @@ const productApi = (app) => {
     connection.query(sql, (err, results) => {
       if (err) throw err;
       if (results.length > 0) {
+        res.set('Access-Control-Allow-Origin', '*')
         res.json(results);
       } else {
         res.send("No se encontraron resultados");
