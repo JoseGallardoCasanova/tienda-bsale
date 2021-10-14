@@ -29,8 +29,6 @@ npm start
 
 _-Backend: Node.js, Express_
 
-_-Frontend: Vanilla Javascript, Jquery, Bootstrap, CSS, HTML_
-
 _-Base de Datos: MySQL_
 
 ## Autores ✒️
