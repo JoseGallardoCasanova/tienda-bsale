@@ -35,6 +35,7 @@ const productApi = (app) => {
     const sql = `SELECT * FROM product WHERE category = ${id} `;
     connection.query(sql, (err, results) => {
       if (err) throw err;
+      res.set('Access-Control-Allow-Origin', '*')
       if (results.length > 0) {
         res.json(results);
       } else {
@@ -52,6 +53,7 @@ const productApi = (app) => {
     const sql = `SELECT * FROM product WHERE name LIKE '%${name}%'`;
     connection.query(sql, (err, results) => {
       if (err) throw err;
+      res.set('Access-Control-Allow-Origin', '*')
       if (results.length > 0) {
         res.json(results);
       } else {
