@@ -27,12 +27,13 @@ const productApi = (app) => {
     });
   });
 
-  //Metodo para traer productos por categoria
+  //Metodo para traer productos por categoria, connection.escape evita el SQL Injection
   app.get("/bsale/category/:id", (req, res) => {
     const {
       id
     } = req.params;
-    const sql = `SELECT * FROM product WHERE category = ${id} `;
+    let categoryId = `${id}`
+    const sql = 'SELECT * FROM product WHERE category = ' + connection.escape(categoryId);
     connection.query(sql, (err, results) => {
       if (err) throw err;
       res.set('Access-Control-Allow-Origin', '*');
@@ -44,17 +45,17 @@ const productApi = (app) => {
     });
   });
 
-  //Buscar por coincidencia de nombre
+  //Buscar por coincidencia de nombre, connection.escape evita el SQL Injection
   app.get("/bsale/search/:name", (req, res) => {
     const {
       name
     } = req.params;
-    
-    const sql = `SELECT * FROM product WHERE name LIKE '%${name}%'`;
+    let nameSearch = `${name}`
+    const sql = 'SELECT * FROM product WHERE name LIKE' + connection.escape( '%' + nameSearch + '%');
     connection.query(sql, (err, results) => {
       if (err) throw err;
       res.set('Access-Control-Allow-Origin', '*');
-      
+
       if (results.length > 0) {
         res.json(results);
       } else {
