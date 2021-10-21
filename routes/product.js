@@ -54,6 +54,7 @@ const productApi = (app) => {
     connection.query(sql, (err, results) => {
       if (err) throw err;
       res.set('Access-Control-Allow-Origin', '*');
+      
       if (results.length > 0) {
         res.json(results);
       } else {
